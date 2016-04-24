@@ -11,8 +11,18 @@
 |
 */
 
+use App\Product;
+use App\Profile;
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test' , function(){
+
+
+
 });
 
 Route::get('/users/signup', 'UsersController@showSignup');
@@ -20,3 +30,9 @@ Route::get('/users/signup', 'UsersController@showSignup');
 Route::post('/users/signup', 'UsersController@doSignup');
 
 Route::get('/', "HomeController@home")->name('home');
+
+Route::get('/users/login', 'UsersController@showLogin');
+
+Route::post('/users/login', 'UsersController@doLogin');
+
+Route::controller('products', 'ProductsController');

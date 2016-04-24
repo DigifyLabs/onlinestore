@@ -13,7 +13,8 @@ class SignupRequest extends Request
      */
     public function authorize()
     {
-        return !\Auth::check();
+        //return !\Auth::check();
+        return true;
     }
 
     /**

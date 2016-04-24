@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($val)
+    {
+       $this->attributes['password'] = \Hash::make($val);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
 }
